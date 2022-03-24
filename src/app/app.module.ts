@@ -4,27 +4,27 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListComponent } from './components/list/list.component';
 import { ButtonComponent } from './components/button/button.component';
-import { CapitalizeFirstPipe } from './pipes/capitalize-first.pipe';
-import { SortByRankingPipe } from './pipes/sort-by-ranking.pipe';
-import { SortByArgPipe } from './pipes/sort-by-arg.pipe';
-import { SortByTypePipe } from './pipes/sort-by-type.pipe';
+import { SortByRankingPipe } from './shared/pipes/sort-by-ranking.pipe';
+import { SortByArgPipe } from './shared/pipes/sort-by-arg.pipe';
+import { BlackBackgroundDirective } from './directives/black-background.directive';
+import { BackgroundDirective } from './directives/background.directive';
+import { ListModule } from './components/list/module/list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
     ButtonComponent,
-    CapitalizeFirstPipe,
     SortByRankingPipe,
     SortByArgPipe,
-    SortByTypePipe
+    BlackBackgroundDirective,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
